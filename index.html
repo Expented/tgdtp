@@ -55,8 +55,8 @@
 		}
 
 		function sendDateTime () {
-			var timestamp = values.date.getTimezoneOffset()
-			var timezoneOffset = values.date.setHours(values.time[0], values.time[1])
+			var timestamp = values.date.setHours(values.time[0], values.time[1])
+			var timezoneOffset = values.date.getTimezoneOffset()
 			
 			Telegram.WebApp.sendData(timestamp+'_'+timezoneOffset)
 		}
