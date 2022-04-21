@@ -18,8 +18,6 @@
 			date: null,
 			time: null
 		}
-		var timestamp = null
-		var timezoneOffset = null
 
 		function init () {
 			var datepickerEl = document.querySelector('.datepicker')
@@ -38,8 +36,8 @@
 
 			Telegram.WebApp.ready()
 			Telegram.WebApp.MainButton
-      			.setText('Ok')
-      			.onClick(sendDateTime)
+				.setText('Ok')
+				.onClick(sendDateTime)
 		}
 
 		function selectHandler () {
@@ -57,9 +55,9 @@
 		}
 
 		function sendDateTime () {
-			timezoneOffset = values.date.getTimezoneOffset()
-			timestamp = values.date.setHours(values.time[0], values.time[1])
-
+			var timestamp = values.date.getTimezoneOffset()
+			var timezoneOffset = values.date.setHours(values.time[0], values.time[1])
+			
 			Telegram.WebApp.sendData(timestamp+'_'+timezoneOffset)
 		}
 
