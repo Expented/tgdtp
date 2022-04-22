@@ -23,13 +23,7 @@ bot.start((ctx) => {
 
 bot.on('message', (ctx) => {
 	if (ctx.message.web_app_data) {
-		var data = ctx.message.web_app_data.data
-		// telegram for android send web_app_data in format '{"data":"123_123"}'
-		if (data.indexOf('data') !== -1) {
-			data = JSON.parse(data).data
-		}
-
-		var [ timespamp, timezoneOffset ] = data.split('_')
+		var [ timespamp, timezoneOffset ] = ctx.message.web_app_data.data.split('_')
 		timespamp = parseInt(timespamp)
 
 		var clientOffset = parseInt(timezoneOffset) * 60 * 1000
