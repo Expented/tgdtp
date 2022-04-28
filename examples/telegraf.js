@@ -21,21 +21,19 @@ bot.start((ctx) => {
 	})
 })
 
-bot.on('message', (ctx) => {
-	if (ctx.message.web_app_data) {
-		var [ timespamp, timezoneOffset ] = ctx.message.web_app_data.data.split('_')
-		timespamp = parseInt(timespamp)
+bot.on('web_app_data', (ctx) => {
+	var [ timespamp, timezoneOffset ] = ctx.message.web_app_data.data.split('_')
+	timespamp = parseInt(timespamp)
 
-		var clientOffset = parseInt(timezoneOffset) * 60 * 1000
-		var serverOffset = (new Date()).getTimezoneOffset() * 60 * 1000
-		var offset = clientOffset - serverOffset
-		
-		var print = 'in user timezone: ' + (new Date(timespamp)).toLocaleString() + '\n'
-		print += 'in UTC timezone: ' + (new Date(timespamp + clientOffset)).toLocaleString() + '\n'
-		print += 'in server timezone: ' + (new Date(timespamp + offset)).toLocaleString()
-		
-		ctx.reply(print)
-	}
+	var clientOffset = parseInt(timezoneOffset) * 60 * 1000
+	var serverOffset = (new Date()).getTimezoneOffset() * 60 * 1000
+	var offset = clientOffset - serverOffset
+
+	var print = 'in user timezone: ' + (new Date(timespamp)).toLocaleString() + '\n'
+	print += 'in UTC timezone: ' + (new Date(timespamp + clientOffset)).toLocaleString() + '\n'
+	print += 'in server timezone: ' + (new Date(timespamp + offset)).toLocaleString()
+
+	ctx.reply(print)
 })
 
 bot.launch()
