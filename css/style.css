@@ -1,7 +1,16 @@
+body {
+	background-color: var(--tg-theme-bg-color, #ffffff);
+	color: var(--tg-theme-hint-color, #222222);
+}
+
+input {
+	color: var(--tg-theme-hint-color, #222222);
+}
+
 .githublink
 {
-  margin-bottom: -6px;
-  padding-bottom: 2px;
+	margin-bottom: -6px;
+	padding-bottom: 2px;
 }
 .githublink img {
 	width: 3em;
