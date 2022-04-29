@@ -13,7 +13,6 @@ function pickHandler (e) {
 		return (false)
 	}
 
-	alert('ok')
 	Telegram.WebApp.MainButton.show()
 }
 
