@@ -9,7 +9,7 @@ pickers.time.addEventListener('change', pickHandler)
 function pickHandler (e) {
 	let other = e.target.type == 'date' ? 'time' : 'date'
 
-	if (!options.hide == other && pickers[other].value == '') {
+	if (options.hide !== other && pickers[other].value == '') {
 		return (false)
 	}
 
