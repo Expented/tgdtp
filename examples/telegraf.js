@@ -3,19 +3,33 @@ const { Telegraf } = require('telegraf')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start((ctx) => {
-	var button = {
-		text: 'go',
+	var defaultButton = {
+		text: 'default',
 		web_app: {
 			url: 'https://expented.github.io/tgdtp/'
 		}
 	}
+	var hideTimeButton = {
+		text: 'only date',
+		web_app: {
+			url: 'https://expented.github.io/tgdtp/?hide=time'
+		}
+	}
+	var betweenButton = {
+		text: 'May 1 to May 20',
+		web_app: {
+			url: 'https://expented.github.io/tgdtp/?min=2022-05-01&max=2022-05-20'
+		}
+	}
+
 	var print = 'choose date and time'
 
 	ctx.reply(print, {
 		reply_markup: JSON.stringify({
 			resize_keyboard: true,
 			keyboard: [
-				[ button ]
+				[ defaultButton, hideTimeButton ],
+				[ betweenButton ]
 			]
 		})
 	})

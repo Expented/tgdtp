@@ -1,48 +1,41 @@
-var values = {
-	date: null,
-	time: null
+var pickers = {
+	date: document.querySelector('input[type="date"]'),
+	time: document.querySelector('input[type="time"]')
+}
+
+pickers.date.addEventListener('change', pickHandler)
+pickers.time.addEventListener('change', pickHandler)
+
+function pickHandler (e) {
+	let other = e.target.type == 'date' ? 'time' : 'date'
+
+	if (!options.hide == other && pickers[other].value == '') {
+		return (false)
+	}
+
+	alert('ok')
+	Telegram.WebApp.MainButton.show()
+}
+
+function sendDateTime () {
+	var timestamp = pickers.date.value
+		? new Date(pickers.date.value)
+		: new Date()
+
+	var [ h, m ] = pickers.time.value.split(':')
+	timestamp.setHours(h || 0, m || 0)
+	
+	var data = timestamp.getTime()+'_'+timestamp.getTimezoneOffset()
+	Telegram.WebApp.sendData(data)
 }
 
 function init () {
-	var datepickerEl = document.querySelector('.datepicker')
-	var timepickerEl = document.querySelector('.timepicker')
-
-	M.Datepicker.init(datepickerEl, {
-		onSelect: selectHandler,
-		autoClose: true
-	})
-	M.Timepicker.init(timepickerEl, {
-		defaultTime: 'now',
-		twelveHour: false,
-		onSelect: selectHandler,
-		autoClose: true
-	})
+	setupOptions()
 
 	Telegram.WebApp.ready()
 	Telegram.WebApp.MainButton
 		.setText('Ok')
 		.onClick(sendDateTime)
-}
-
-function selectHandler () {
-	let isDate = arguments.length == 1
-
-	values[isDate ? 'date' : 'time'] = isDate
-		? arguments[0]
-		: [ ...arguments ]
-	
-	if (!values[isDate ? 'time' : 'date']) {
-		return (false)
-	}
-
-	Telegram.WebApp.MainButton.show()
-}
-
-function sendDateTime () {
-	var timestamp = values.date.setHours(values.time[0], values.time[1])
-	var timezoneOffset = values.date.getTimezoneOffset()
-	
-	Telegram.WebApp.sendData(timestamp+'_'+timezoneOffset)
 }
 
 document.addEventListener('DOMContentLoaded', init)
