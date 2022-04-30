@@ -41,11 +41,10 @@ bot.on('web_app_data', (ctx) => {
 
 	var clientOffset = parseInt(timezoneOffset) * 60 * 1000
 	var serverOffset = (new Date()).getTimezoneOffset() * 60 * 1000
-	var offset = clientOffset - serverOffset
+	var offset = serverOffset - clientOffset
 
-	var print = 'in user timezone: ' + (new Date(timespamp)).toLocaleString() + '\n'
-	print += 'in UTC timezone: ' + (new Date(timespamp + clientOffset)).toLocaleString() + '\n'
-	print += 'in server timezone: ' + (new Date(timespamp + offset)).toLocaleString()
+	var print = 'in user timezone: ' + (new Date(timespamp + offset)).toLocaleString() + '\n'
+	print += 'in server timezone: ' + (new Date(timespamp)).toLocaleString()
 
 	ctx.reply(print)
 })
