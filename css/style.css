@@ -7,6 +7,43 @@ input {
 	color: var(--tg-theme-hint-color, #222222);
 }
 
+  
+.madewithlove {
+	color: #666;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	position: absolute;
+	width: 90%;
+	left: 50%;
+	top: 45%;
+	bottom: auto;
+	right: auto;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center; 
+}
+span a {
+	  color: #000000;
+	  text-decoration: none;
+}
+span .fa {
+	  color: #E90606;
+	  margin: 0 3px;
+	  font-size: 10px;
+	  animation: pound .35s infinite alternate;
+	  -webkit-animation: pound .35s infinite alternate; 
+}
+  
+@-webkit-keyframes pound {
+	to {
+	  transform: scale(1.1); } }
+  
+@keyframes pound {
+	to {
+	  transform: scale(1.1); } }  
+
 .githublink
 {
 	margin-bottom: -6px;
