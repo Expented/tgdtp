@@ -45,10 +45,7 @@ input {
 }
 
 .inputdatetime {
-	display: block;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+	display: flex;
 
 	border: none;
 	border-bottom: 3px solid;
@@ -58,6 +55,7 @@ input {
 	height: 30px;
 
 	background: none;
+	outline: none;
 }
 
 
