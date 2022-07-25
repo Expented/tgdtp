@@ -3,6 +3,26 @@ var pickers = {
 	time: document.querySelector('input[type="time"]')
 }
 
+
+const setDefaultValues = (pickers) => {
+	const current = new Date();
+	
+	const date = [ current.getFullYear(), current.getMonth() + 1, current.getDate() ]
+		.map(item => item.toString().padStart(2, "0"))
+		.join("-");
+
+	pickers.date.value = date;
+
+	const time = [ current.getHours(), current.getMinutes() ]
+		.map(item => item.toString().padStart(2, "0"))
+		.join(":");
+
+	pickers.time.value = time;
+}
+setDefaultValues(pickers);
+
+
+
 pickers.date.addEventListener('change', pickHandler)
 pickers.time.addEventListener('change', pickHandler)
 
@@ -23,7 +43,7 @@ function sendDateTime () {
 
 	var [ h, m ] = pickers.time.value.split(':')
 	timestamp.setHours(h || 0, m || 0)
-	
+
 	var data = timestamp.getTime()+'_'+timestamp.getTimezoneOffset()
 	Telegram.WebApp.sendData(data)
 }
