@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
 }
 
 body {
@@ -11,10 +12,28 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+
+	font-family: 'Roboto', sans-serif;
 }
 
-main {
+.page-main {
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+
+}
+
+.page-main-selectDate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+
+	user-select: none;
 }
 
 
@@ -28,6 +47,13 @@ input {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+
+	border: none;
+	border-bottom: 3px solid;
+
+	cursor: pointer;
+	width: 80%;
+	height: 30px;
 }
 
 
