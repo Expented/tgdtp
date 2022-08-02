@@ -24,7 +24,7 @@ This is example of `web_app_data`. In this case `timespamp` is `1649812020000`, 
 You also can use parametrs to make picker more handy. Here is the list of avalibule parametrs: 
 
 - hide 
-- min
+- max
 - max
 
 Let's talk about all of it. With `hide` you can hide one of fieds, `date` or `time`. By using `min` user will not be abel to choose date less than specified, with `max` user will not be abel to select a date more than then specified. Below you can see some examples. 
