@@ -1,7 +1,8 @@
 const options = {
 	min: false,
 	max: false,
-	hide: false
+	hide: false,
+	text: false
 }
 
 function setupOptions () {
@@ -26,5 +27,9 @@ function setupOptions () {
 
 	if (options.max) {
 		pickers['date'].setAttribute('max', options.max);
+	}
+
+	if (options.text) {
+		pickers['text'].innerHTML = options.text;
 	}
 }

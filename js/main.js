@@ -1,6 +1,7 @@
 var pickers = {
 	date: document.querySelector('input[type="date"]'),
-	time: document.querySelector('input[type="time"]')
+	time: document.querySelector('input[type="time"]'),
+	text: document.querySelector('#text')
 }
 
 
