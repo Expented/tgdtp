@@ -26,13 +26,15 @@ You also can use parametrs to make picker more handy. Here is the list of avalib
 - hide 
 - min
 - max
+- text
 
-Let's talk about all of it. With `hide` you can hide one of fieds, `date` or `time`. By using `min` user will not be abel to choose date less than specified, with `max` user will not be abel to select a date more than then specified. Below you can see some examples. 
+Let's talk about all of it. With `hide` you can hide one of fieds, `date` or `time`. By using `min` user will not be able to choose date less than specified, with `max` user will not be able to select a date more than then specified. With `text` you can change the main title on the site. Below you can see some examples. 
 
 1. https://expented.github.io/tgdtp/?hide=time&max=2023-04-01 | Hidden field with time selection, maximum date for selection is 01.04.2023 
 2. https://expented.github.io/tgdtp/?hide=date | Hidden field with date selection 
 3. https://expented.github.io/tgdtp/?min=2022-04-01 | Minimum date for selection is 01.04.2022 
 4. https://expented.github.io/tgdtp/?min=2022-01-01&max=2023-01-01 | Minimum date for selection in 01.01.2022, maximum date for selection is 01.01.2023 
+5. https://expented.github.io/tgdtp/?hide=date&text=SELECT%20TIME: | Hidden field with date selection, text changed to `SELECT TIME`
 
 ### Examples
 
