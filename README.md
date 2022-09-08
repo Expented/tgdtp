@@ -2,7 +2,7 @@
 
 ## What's this?
 
-Tgdtp is an Telegram Web App date and time picker. With it, you can make an easy choice of date and time for your bot. Please read the license before use.
+Tgdtp is an Telegram Web App date and time picker. With it, you can make an easy choice of date and time for your bot. Please, DO NOT remove copyright! 
 
 ## Getting Started
 
