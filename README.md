@@ -21,7 +21,7 @@ This is example of `web_app_data`. In this case `timespamp` is `1649812020000`, 
 
 ### Parametrs 
 
-You also can use parametrs to make picker more handy. Here is the list of avalibule parametrs: 
+You also can use parametrs to make picker more flexible. Here is the list of avalibule parametrs: 
 
 - hide 
 - min
@@ -44,6 +44,6 @@ You can find examples in `examples` folder, and also find it below.
 
 ## Last words 
 
-I you have questions, or you find an error, you can create an issues. 
+If you have any questions, or you find an error, you can create an issues. 
 
 Made with ❤️ by Expented
