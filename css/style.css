@@ -60,7 +60,7 @@ body {
 }
 
 .page-main-selectDate {
-  color: var(--tg-theme-text-color);
+  color: var(--tg-theme-text-color, #222222);
   font-family: 'SF Pro Display', sans-serif;
   font-weight: 500;
   display: flex;
