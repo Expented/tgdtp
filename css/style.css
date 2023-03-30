@@ -39,7 +39,7 @@ body {
   }
   
   .box {
-	color: var(--tg-theme-hint-color, #ffffff, #222222);
+	color: var(--tg-theme-hint-color, #ffffff);
 	border-radius: 12px;
 	padding: 24px 24px 40px;
 	display: flex;
